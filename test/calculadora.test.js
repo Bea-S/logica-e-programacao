@@ -1,5 +1,21 @@
 const { somarDoisNumeros } = require('../src/calculadora');
+const { expect } = require('chai');
 
-const resultadoDaSoma = somarDoisNumeros(5, 3);
+describe ('Testes da Função de Soma', function () {
+   it('A função deve ser capaz de somar dois numeros positivos', function () {
+       // coleta o resultado da função
+         const resultadoDaSoma = somarDoisNumeros(5, 3);
 
-console.log(resultadoDaSoma);
+       // compara o resultado com o valor que você espera 
+       expect(resultadoDaSoma).to.equal(8);
+   });
+
+   it('A função deve ser capaz de somar um numero positivo e um negativo', function () {
+       //coleta o resultado da função
+         const resultadoDaSoma = somarDoisNumeros(50, -15);
+
+       //compara o resultado com o valor que você espera
+        expect(resultadoDaSoma).to.equal(35);
+   }); 
+
+});
